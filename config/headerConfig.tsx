@@ -11,8 +11,8 @@ import type { HeaderItem, Dict } from "../types/commonTypes";
 
 export const HEADER_CONFIG: Dict<HeaderItem> = {
   home: { label: "Home", path: "/" },
-  who_am_i: { label: "About Me", path: "/whoAmI" },
-  experience: { label: "Experience", path: "/experience" },
-  blog: { label: "Thoughts", path: "/thoughts" },
-  contact: { label: "Contact", path: "/contactMe" },
+  who_am_i: { label: "About Me", path: "/AboutMe" },
+  experience: { label: "Experience", path: "/Experience" },
+  blog: { label: "Thoughts", path: "/Thoughts" },
+  contact: { label: "Contact", path: "/ContactMe" },
 };
