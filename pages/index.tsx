@@ -13,19 +13,22 @@ function Home() {
   const page = "home";
   return (
     <>
-      <Head>
-        <title>You Found Dr. Cool</title>
-      </Head>
-      <Background />
-      <Header page={page} />
-
-      <HeroPage />
-
-      <Interests />
-
-      <Skills />
-
-      <KnowMore />
+      <div className="  container bg-black mx-auto h-screen">
+        <Head>
+          <title>You Found Dr. Cool</title>
+        </Head>
+        <Header page={page} />
+        <HeroPage />
+      </div>
+      <div className="fixed bg-black  h-full ">
+        <div className="block bg-red-400 w-[100vw] h-[100vh]">
+          <Interests />
+        </div>
+      </div>
+      <div className="block bg-red-400 w-[100vw] h-[100vh] mt-40">
+        <Skills />
+        <KnowMore />
+      </div>
     </>
   );
 }

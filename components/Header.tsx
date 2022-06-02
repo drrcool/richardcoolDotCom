@@ -1,4 +1,4 @@
-import { Component } from "react";
+import GlassCard from "./GlassCard";
 import { HEADER_CONFIG } from "../config/headerConfig";
 import { Dict, HeaderItem, PageList } from "../types/commonTypes";
 import Link from "next/link";
@@ -33,19 +33,18 @@ const Header = ({ page }: HeaderProps): JSX.Element => {
   const name = "Dr. Richard Cool";
   const headerCount = Object.keys(HEADER_CONFIG).length;
   return (
-    <div
-      className={
-        "fixed w-full h-[100px] top-0 flex flex-row flex-auto items-center place-content-center bg-black"
-      }
-    >
-      <div className={"grid grid-cols-5 grow text-3xl  pl-10 col-span-3 "}>
+    <div className=" h-[100px] top-0 flex flex-row items-center z-[50] w-inherit bg-black">
+      <div
+        className={
+          "hidden md:grid grid-cols-5 grow md:text-l lg:text-xl xl:text-3xl  pl-10 col-span-3  font-bold"
+        }
+      >
         {navbarEntries(HEADER_CONFIG)}
       </div>
-      <div className="basis-1/3 text-6xl pr-10  col-span-2 text-right text-blue-500">
+      <div className="basis-full md:basis-1/3  text-xl md:text-xl lg:text-3xl xl:text-5xl pr-10  col-span-5 md:col-span-2 text-center md:text-right text-purple-900 font-extrabold ">
         {name}
       </div>
     </div>
   );
 };
-
 export default Header;

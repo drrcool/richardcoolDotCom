@@ -1,31 +1,37 @@
 import styles from "./HeroPage.module.css";
 import HeroPortrait from "../components/HeroPortrait";
 import TextBlock from "../components/TextBlock";
+import GlassCard from "./GlassCard";
+import { text } from "stream/consumers";
 
 export default function HeroPage(): JSX.Element {
   const textHeadline = (
-    <p className="text-white text-6xl">
-      Enabling data-driven business decisions
-    </p>
+    <div className="text-blue-900  text-7xl font-extrabold  drop-shadow-lg mb-[5%]">
+      <p className="ml-10 w-[80%]">Enabling data-driven business decisions</p>
+    </div>
   );
   const textSubHeadLine = (
-    <p className="text-white text-4xl">
-      through
-      <span className="text-orange-400"> analytic tooling</span>
-      <span className="text-blue-400"> data visualization</span>
-      and <span className="text-orange-400"> machine learning</span>
-    </p>
-  );
-  return (
-    <div className="h-screen grid  place-items-center absolute top-[100px] w-full">
-      <div className="static backdrop-blur-lg  drop-shadow-lg border rounded-xl m-20 h-3/4 w-3/4 bg-zinc-800 bg-opacity-90 grid grid-cols-2 place-items-stretch border-black p-11">
-        <div className="">
-          {textHeadline}
-          {textSubHeadLine}
-        </div>
-
-        <HeroPortrait />
+    <div className="text-blue-900  text-5xl font-bold  drop-shadow-lg w-full shadow-inherit ">
+      <div className="whitespace-nowrap absolute mr bottom-[-5rem] right-10 text-right   mt-[5%]">
+        <p>
+          through
+          <span className="text-red-900"> analytic tooling</span>,<br />
+          <span className="text-purple-900">
+            data visualization
+            <br />{" "}
+          </span>
+          , and <span className="text-red-900"> machine learning</span>
+        </p>
       </div>
     </div>
+  );
+
+  return (
+    <div className=" static flex flex-col  mt-[100px]">
+      {textHeadline}
+      <HeroPortrait />
+      {textSubHeadLine}
+    </div>
+    // </div>
   );
 }

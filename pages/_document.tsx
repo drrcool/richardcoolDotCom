@@ -20,7 +20,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="font-body bg-black text-white">
+      <body className="font-body bg-black text-white subpixel-antialiased ">
         <Main />
         <NextScript />
       </body>
