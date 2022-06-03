@@ -5,7 +5,7 @@ export interface HeaderItem {
 }
 export enum PageList {
   home = "home",
-  who_am_i = "who_am_i",
+  aboutme = "aboutmeP",
   blog = "blog",
   contact = "contact",
   experience = "experience",
@@ -19,4 +19,19 @@ export interface ButtonProps {
   theme: string;
   setTheme: Function;
   toggleButton: Function;
+}
+
+export interface PostItem {
+  title: string;
+  content: string;
+  image?: string;
+  icon?: string;
+  date?: string;
+}
+
+export interface PhotoItem {
+  file: string;
+  path: string;
+  isTall: boolean;
+  isWide: boolean;
 }

@@ -1,4 +1,4 @@
-import type { HeaderItem, Dict } from "../types/commonTypes";
+import type { HeaderItem, Dict } from "../lib/types";
 /* I thought about defining this using an array of each of the nav test entries
  where we construct the link reference using .lower().  My concern is that
  we may want to make the thoughts / blog section paginated.  So we will want
@@ -11,7 +11,7 @@ import type { HeaderItem, Dict } from "../types/commonTypes";
 
 export const HEADER_CONFIG: Dict<HeaderItem> = {
   home: { label: "Home", path: "/" },
-  who_am_i: { label: "About Me", path: "/AboutMe" },
+  aboutme: { label: "About Me", path: "/AboutMe" },
   experience: { label: "Experience", path: "/Experience" },
   blog: { label: "Thoughts", path: "/Thoughts" },
   contact: { label: "Contact", path: "/ContactMe" },

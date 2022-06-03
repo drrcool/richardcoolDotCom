@@ -4,7 +4,7 @@
 
 
 @layer utilities {
-    .mask_cut {
-        clip-path: ellipse(43% 30% at 49% 33%)
-    }
+  .mask_cut {
+    clip-path: ellipse(43% 30% at 49% 33%)
+  }
 }

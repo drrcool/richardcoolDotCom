@@ -1,9 +1,9 @@
 import GlassCard from "./GlassCard";
 import { HEADER_CONFIG } from "../config/headerConfig";
-import { Dict, HeaderItem, PageList } from "../types/commonTypes";
+import { Dict, HeaderItem, PageList } from "../lib/types";
 import Link from "next/link";
 
-// From the label and path generate the JSX we need to create the navlinks
+// From the label and path generate the JSX we need to create the navLinks
 function navLinks(label: string, path: string): JSX.Element {
   return (
     <div className="">

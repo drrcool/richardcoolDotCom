@@ -1,4 +1,4 @@
-import { Dict } from "../types/commonTypes";
+import { Dict } from "../lib/types";
 type POST_CONFIG = Dict<string>;
 
 export const POST_CONFIG: Dict<string> = {
