@@ -1,0 +1,31 @@
+.blog-header-section {
+  /* grow-1 bg-red-300 flex flex-col */
+}
+
+.header-text-container {
+  /*+ Will need to be relative so the ones under can abs */
+}
+
+.fade-text-out-read-more {
+  /*+ This will be a dive that sits on top of text and slowly gains
+     opacity so you can't see it at the end of the */
+}
+
+.blog-header-title {}
+
+.blog-header-text {
+  /*+ This should only show 3 lines of text */
+}
+
+.blog-entry-grid-section {
+  /* grid grid-cols-2 grid-rows-2 bg-purple-800 place-items-center gap-2 grow-[1]" */
+}
+
+.blog-grid {}
+
+.blog-card {}
+
+.blog-card .master-card {}
+
+/* flexbox that holds both sections?
+flex flex-col static mt-[100px] h-[70%] bg-yellow-700 place-items-center items-stretch */

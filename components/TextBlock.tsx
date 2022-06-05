@@ -1,29 +1,21 @@
-import * as React from "react";
-
-interface PostItem {
+interface TextBoxItem {
   title: string;
   content: string;
-}
-interface ClassItem {
   titleClass: string;
   contentClass: string;
 }
 
-export default function TextBlock({
-  data,
-  classes,
-}: {
-  data: PostItem;
-  classes: ClassItem;
-}) {
-  const title = (
-    <div className={classes.titleClass}>
-      <h3>{data.title}</h3>
+export default function TextBlock(props: TextBoxItem) {
+  const { title, titleClass, content, contentClass } = props;
+
+  const titleElement = (
+    <div className={titleClass}>
+      <h3>{title}</h3>
     </div>
   );
-  const content = (
-    <div className={classes.contentClass}>
-      <p>{data.content}</p>
+  const contentElement = (
+    <div className={contentClass}>
+      <p>{content}</p>
     </div>
   );
   return (

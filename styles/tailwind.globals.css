@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+@layer utilities {
+  .mask_cut {
+    clip-path: ellipse(43% 30% at 49% 33%)
+  }
+}

@@ -1,24 +1,10 @@
-export type PageListString = keyof typeof PageList;
-export interface HeaderItem {
-  label: string;
-  path: string;
-}
-export enum PageList {
-  home = "home",
-  aboutme = "aboutmeP",
-  blog = "blog",
-  contact = "contact",
-  experience = "experience",
-}
-
+//* Generics *//
 export interface Dict<Type> {
   [key: string]: Type;
 }
-
-export interface ButtonProps {
-  theme: string;
-  setTheme: Function;
-  toggleButton: Function;
+export interface HeaderItem {
+  label: string;
+  path: string;
 }
 
 export interface PostItem {
@@ -27,6 +13,7 @@ export interface PostItem {
   image?: string;
   icon?: string;
   date?: string;
+  titleElement?: string;
 }
 
 export interface PhotoItem {
@@ -34,4 +21,11 @@ export interface PhotoItem {
   path: string;
   isTall: boolean;
   isWide: boolean;
+}
+
+export interface CardItem {
+  title: string;
+  content: string;
+  thumbnail: string;
+  className?: string;
 }

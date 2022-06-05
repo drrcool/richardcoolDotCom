@@ -1,0 +1,31 @@
+:root.theme-1 {
+  --bg-primary: rgb(227, 226, 151);
+  --bg-secondary: rgb(179, 162, 162);
+  --accent-1: rgba(112, 77, 136, 0.855);
+  --accent-2: rgb(234, 151, 93);
+  --accent-3: rgb(71, 170, 109);
+  --text-primary: rgb(12, 11, 11);
+}
+
+:root.font-theme-1 {
+  --fonts: "Space Grotesk", sans-serif;
+  --font-style: semi-bold;
+  --font-weight: 500;
+  --font-size: 20px;
+}
+
+
+/* This lists what the themes are styling. Try not to
+refer to any other color than these for a single place to tweak */
+:root {
+
+  --text-color: var(--text-primary);
+  --header-text-color: var(--text-accent-1);
+  --item-label-color: var(--text-accent-2);
+  --hero-text-color-1: var(--text-primary);
+  --hero-text-color-2: var(--text-accent-1);
+  --hero-text-color-3: var(--text-accent-2);
+  --hero-text-color-4: var(--text-accent-3);
+  --svg-primary: var(--text-primary);
+  --svg-accent-1: var(--text-accent-3);
+}

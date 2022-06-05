@@ -1,10 +1,18 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+:root {
+  font-family: var(--fonts);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: true;
+  -moz-osx-font-smoothing: true;
 
-@layer utilities {
-  .mask_cut {
-    clip-path: ellipse(43% 30% at 49% 33%)
-  }
 }
+
+@import "themes";
+@import "../styles/thoughts.css";

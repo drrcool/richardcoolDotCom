@@ -1,7 +1,7 @@
 ---
-title: "OMG I am the smartest guy ever. 6 best SVS Code extnesions":
+title: "OMG I am the smartest guy ever. 6 best SVS Code extnesions"
 date: "2022-01-30"
-image: "public/image/blog/post7.jpg
+image: "public/image/blog/post7.jpg"
 ---
 
 Excepteur nulla aliqua incididunt nulla quis consequat deserunt Lorem. Duis amet ullamco ea Lorem irure commodo culpa culpa magna nulla. Lorem ipsum qui mollit fugiat aute ut anim quis cillum ut anim est cupidatat magna. Deserunt incididunt deserunt id aute fugiat dolor velit. Dolore incididunt velit in nostrud ad. Consequat deserunt culpa deserunt deserunt commodo exercitation enim pariatur est voluptate. Consectetur dolor dolor deserunt excepteur culpa irure sint.

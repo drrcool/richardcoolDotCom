@@ -1,4 +1,5 @@
 import { PhotoItem } from "../lib/types";
+import { getPhotoUrl } from "../lib/getPhotoUrl";
 
 // Create the className for a generic photo
 function getPhotoClass(photo: PhotoItem): string {
@@ -13,17 +14,14 @@ function getSizePartOfClass(isWide: boolean, isTall: boolean): string {
   return `${widePart} ${tallPart}`;
 }
 
-function getIconStyle(photo: PhotoItem): string {
-  const { path, file } = photo;
-  return `url(${path.substring(6, path.length)}${file})`;
-}
 const PhotoMosaic = ({ imageData }: { imageData: PhotoItem[] }) => {
   const photoGrid = imageData.map((photo): JSX.Element => {
+    console.log(getPhotoUrl(photo));
     return (
       <div
         className={getPhotoClass(photo)}
         key={`${photo.file}-div`}
-        style={{ backgroundImage: getIconStyle(photo) }}
+        style={{ backgroundImage: getPhotoUrl(photo) }}
       />
     );
   });

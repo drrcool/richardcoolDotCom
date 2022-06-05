@@ -1,12 +1,12 @@
 import GlassCard from "./GlassCard";
 import { HEADER_CONFIG } from "../config/headerConfig";
-import { Dict, HeaderItem, PageList } from "../lib/types";
+import { Dict, HeaderItem } from "../lib/types";
 import Link from "next/link";
 
 // From the label and path generate the JSX we need to create the navLinks
 function navLinks(label: string, path: string): JSX.Element {
   return (
-    <div className="">
+    <div className="" key={`${label}-navItem`}>
       <Link href={path}>
         <a>{label}</a>
       </Link>
@@ -15,14 +15,11 @@ function navLinks(label: string, path: string): JSX.Element {
 }
 // Take the defined HEADER_CONFIG and return an object that
 // includes the JSX element for each.
-type PageListStrings = keyof typeof PageList;
 function navbarEntries(config: Dict<HeaderItem>): Array<JSX.Element> {
-  const navLinkEntries: Array<JSX.Element> = Object.keys(config).map((key) => {
-    const label = config[key].label;
-    const path = config[key].path;
+  return Object.keys(config).map((key) => {
+    const { label, path } = config[key];
     return navLinks(label, path);
   });
-  return navLinkEntries;
 }
 
 type HeaderProps = {

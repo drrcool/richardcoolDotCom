@@ -1,5 +1,5 @@
 ---
-title: "OMG I am the smartest guy ever. 6 best SVS Code extnesions":
+title: "OMG I am the smartest guy ever. 6 best SVS Code extnesions"
 date: "2022-01-30"
 image: "public/image/blog/post4.jpeg"
 ---
