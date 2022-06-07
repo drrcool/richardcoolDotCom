@@ -1,7 +1,7 @@
-import { Dict } from "../lib/types";
-import BlogCard from "./BlogCard";
-import { CardItem } from "../lib/types";
+import Link from "next/link";
 import React from "react";
+import { CardItem, Dict, PostItem } from "../lib/types";
+import BlogCard from "./BlogCard";
 
 // Add any tags we need to add to the className to
 // Setup the class for master cards
@@ -12,12 +12,6 @@ const MasterCardClass = () => {
 const constructCard = (cardEntry: CardItem, blogIndex: number): JSX.Element => {
   return <BlogCard {...cardEntry} key={`blog-card-${blogIndex}`} />;
 };
-
-interface PreviewItems {
-  blogData: Dict<string>[];
-  nCards?: number;
-  nMasterCards?: number;
-}
 
 // Since the index is 0 indexed, index needs to be under the total # of master
 const determineMasterCard = (cardIndex: number, nMasterCards: number) => {
@@ -30,19 +24,17 @@ const buildCardClassName = (isMasterCard: boolean): string => {
 };
 
 const buildCardInputs = (
-  blogEntry: Dict<string>,
+  blogEntry: PostItem,
   isMasterCard: boolean
 ): CardItem => {
   return {
-    title: blogEntry.title,
-    content: blogEntry.content,
-    thumbnail: blogEntry.image,
+    ...blogEntry,
     className: buildCardClassName(isMasterCard),
   };
 };
 
 const buildCardItem = (
-  blogEntry: Dict<string>,
+  blogEntry: PostItem,
   blogIndex: number,
   nMasterCards: number
 ): JSX.Element => {
@@ -67,13 +59,3 @@ const BlogPreviewGrid = (props: PreviewItems): JSX.Element => {
 };
 
 export default BlogPreviewGrid;
-
-const blogItem = {
-  title: "tZest",
-  content: "hello",
-  image: "test.png",
-};
-
-const blogEntry = [blogItem, blogItem];
-const test = BlogPreviewGrid({ ...{ blogData: blogEntry } });
-console.log(test);

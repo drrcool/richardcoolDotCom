@@ -10,10 +10,11 @@ export interface HeaderItem {
 export interface PostItem {
   title: string;
   content: string;
-  image?: string;
-  icon?: string;
-  date?: string;
-  titleElement?: string;
+  file: string;
+  id: string;
+  image: string;
+  icon: string;
+  date: string;
 }
 
 export interface PhotoItem {
@@ -23,9 +24,8 @@ export interface PhotoItem {
   isWide: boolean;
 }
 
-export interface CardItem {
-  title: string;
-  content: string;
-  thumbnail: string;
-  className?: string;
+export type CardItem = PostItem & { className?: string };
+
+export interface SlugItem {
+  params: { slug: string };
 }

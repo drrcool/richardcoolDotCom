@@ -1,4 +1,4 @@
-import GlassCard from "./GlassCard";
+import GlassCard from "../Obsolete/GlassCard";
 import { HEADER_CONFIG } from "../config/headerConfig";
 import { Dict, HeaderItem } from "../lib/types";
 import Link from "next/link";
@@ -22,11 +22,7 @@ function navbarEntries(config: Dict<HeaderItem>): Array<JSX.Element> {
   });
 }
 
-type HeaderProps = {
-  page: string;
-};
-
-const Header = ({ page }: HeaderProps): JSX.Element => {
+const Header = (): JSX.Element => {
   const name = "Dr. Richard Cool";
   const headerCount = Object.keys(HEADER_CONFIG).length;
   return (

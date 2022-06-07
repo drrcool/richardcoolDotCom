@@ -27,5 +27,11 @@
 
 .blog-card .master-card {}
 
+.cart-title {}
+
+.card-date {}
+
+.card-content {}
+
 /* flexbox that holds both sections?
 flex flex-col static mt-[100px] h-[70%] bg-yellow-700 place-items-center items-stretch */

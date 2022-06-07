@@ -1,7 +1,7 @@
 ---
 title: "Witty Title"
 date: "4"
-image: "public/image/experience/post8.jpg"
+image: "public/image/experiences/post8.jpeg"
 ---
 
 Officia elit fugiat non officia excepteur quis. Elit elit ea nulla fugiat in sint. Consectetur officia velit proident voluptate ullamco in ullamco et. Consectetur commodo in mollit adipisicing irure eiusmod exercitation Lorem. Ea officia aliqua aute culpa ad culpa quis velit.

@@ -1,0 +1,58 @@
+.experience-header {}
+
+.experience-header-title {}
+
+.experience-header-content {}
+
+.experience-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  gap: 1rem;
+  grid-template-rows: repeat(3, minmax(300px, 1fr));
+  padding: 3rem;
+  text-decoration: none;
+}
+
+a .experience-grid-card {
+  border: 2px solid black;
+  width: 100%;
+  display: block;
+  text-decoration: none;
+
+}
+
+.experience-grid-container>a:link,
+.experience-grid-container>a:visited,
+.experience-card-container>a:hover,
+.experience-card-container>a:active {
+  text-decoration: none;
+
+}
+
+.experience-card-content {
+  background-color: cyan;
+  height: 100%;
+  background-size: cover;
+  filter: grayscale(100%);
+  transition: all 0.5s ease;
+  display: grid;
+  place-items: center stretch
+}
+
+
+.experience-grid-title {
+  font-size: 4em;
+  color: red;
+  display: none;
+  margin: 0;
+  text-align: center
+}
+
+.experience-card-content:hover {
+  filter: grayscale(0%);
+  transition: all 0.5s ease;
+}
+
+.experience-card-content:hover .experience-grid-title {
+  display: block;
+}

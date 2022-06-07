@@ -6,10 +6,10 @@ export function getPhotoUrl(photo: { file: string; path?: string }): string {
   //* we will read the path as the filename
   const { file } = photo;
   let { path } = photo;
-  path = path || file;
+  path = path ? `${path}${file}` : file;
   //* This removes either public or /public from the string.
   const pattern_string = /[\/]?(public)/g;
   path = path.replace(pattern_string, "");
   const leadingSlash = path.startsWith("/") ? "" : "/";
-  return `url(${leadingSlash}${path}${file})`;
+  return `url(${leadingSlash}${path})`;
 }

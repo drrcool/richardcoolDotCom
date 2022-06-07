@@ -15,4 +15,9 @@
 }
 
 @import "themes";
-@import "../styles/thoughts.css";
+@import "thoughts";
+@import "utils";
+@import "aboutme";
+@import "landing_page";
+@import "experience";
+@import "contactme";

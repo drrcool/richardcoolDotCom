@@ -1,0 +1,39 @@
+.heading2XL {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.05rem;
+  margin: 1rem0;
+}
+
+.headingXL {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.05rem;
+  margin: 1rem0;
+}
+
+.headingLg {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 1rem0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  margin: 0 0 1.25rem;
+}
+
+.pageFoundation {
+  background-color: var(--bg-primary);
+  height: 100vh;
+
+}
+
+/* <div className="container bg-black mx-auto h-screen z-[-50]"> */

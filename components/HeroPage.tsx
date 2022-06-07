@@ -1,7 +1,7 @@
 import styles from "./HeroPage.module.css";
 import HeroPortrait from "../components/HeroPortrait";
 import TextBlock from "../components/TextBlock";
-import GlassCard from "./GlassCard";
+import GlassCard from "../Obsolete/GlassCard";
 import { text } from "stream/consumers";
 
 export default function HeroPage(): JSX.Element {
