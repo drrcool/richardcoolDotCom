@@ -1,7 +1,9 @@
 ---
-title: "Programming":
-date: '1'
+title: "Programming:"
+date: "1"
 ---
+
+# Programming
 
 ## Python:
 

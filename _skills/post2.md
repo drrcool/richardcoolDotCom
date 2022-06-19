@@ -1,6 +1,6 @@
 ---
-title: "Analytics & ML:
-date:"2"
+title: "Analytics & ML:"
+date: "2"
 ---
 
 ## Regression Analyis:

@@ -1,6 +1,6 @@
 ---
-title:"Data Visualization"
-date: 2
+title: "Data Visualization"
+date: "2"
 icon: "Graph"
 ---
 

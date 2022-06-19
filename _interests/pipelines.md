@@ -1,6 +1,6 @@
 ---
 title: "Data Pipelines"
-date: "6",
+date: "6"
 icon: "Share"
 ---
 
