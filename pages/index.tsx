@@ -1,12 +1,10 @@
 import Head from "next/head";
-import Header from "../components/Header";
-import KnowMore from "../components/KnowMore";
+import { useState } from "react";
 import HeroPage from "../components/HeroPage";
 import Interests from "../components/Interests";
-import Skills from "../components/Skills";
-import Background from "../Obsolete/Background";
-import { useState } from "react";
+import KnowMore from "../components/KnowMore";
 import Layout from "../components/layout";
+import Skills from "../components/Skills";
 import { getSortedPostData } from "../lib/post";
 import { PostItem } from "../lib/types";
 
@@ -37,7 +35,7 @@ function Home({
         <Head>
           <title>You Found Dr. Cool</title>
         </Head>
-        <Header />
+
         <HeroPage />
       </div>
       <div className="fixed bg-black  h-full ">

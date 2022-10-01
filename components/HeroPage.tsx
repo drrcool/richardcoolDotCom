@@ -1,18 +1,14 @@
-import styles from "./HeroPage.module.css";
-import HeroPortrait from "../components/HeroPortrait";
-import TextBlock from "../components/TextBlock";
-import GlassCard from "../Obsolete/GlassCard";
-import { text } from "stream/consumers";
-
+import styled from "styled-components";
+import HeroPortrait from "./HeroPortrait";
 export default function HeroPage(): JSX.Element {
   const textHeadline = (
-    <div className="text-blue-900  text-7xl font-extrabold  drop-shadow-lg mb-[5%]">
-      <p className="ml-10 w-[80%]">Enabling data-driven business decisions</p>
+    <div>
+      <p>Enabling data-driven business decisions</p>
     </div>
   );
   const textSubHeadLine = (
-    <div className="text-blue-900  text-5xl font-bold  drop-shadow-lg w-full shadow-inherit ">
-      <div className="whitespace-nowrap absolute mr bottom-[-5rem] right-10 text-right   mt-[5%]">
+    <div>
+      <div>
         <p>
           through
           <span className="text-red-900"> analytic tooling</span>,<br />
@@ -26,12 +22,41 @@ export default function HeroPage(): JSX.Element {
     </div>
   );
 
+  const nameText = (
+    <>
+      <div> Richard Cool</div>
+      <div> PhD </div>
+    </>
+  );
+
+  const affiliationText = (
+    <>
+      <div> Senior Data Scientist </div>
+      <div> Netflix </div>
+    </>
+  );
+  const missionStatement = (
+    <>
+      <div> RIch and </div>
+      <p> Famouse</p>
+    </>
+  );
+  const HeroPageContainer = styled.div`
+    height: 90vh;
+    width: 100%;
+    position: absolute;
+    top: 10vh;
+    background-color: ${(props) => props.theme.colors.sectionBackground};
+  `;
+
   return (
-    <div className=" static flex flex-col  mt-[100px]">
+    <HeroPageContainer>
+      {nameText}
+      {affiliationText}
       {textHeadline}
       <HeroPortrait />
       {textSubHeadLine}
-    </div>
-    // </div>
+      {missionStatement}
+    </HeroPageContainer>
   );
 }

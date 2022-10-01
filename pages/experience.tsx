@@ -1,13 +1,10 @@
-import type { NextPage } from "next";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import ExperienceGrid from "../components/ExperienceGrid";
-import Header from "../components/Header";
 import Layout from "../components/layout";
-import TextBlock from "../components/TextBlock";
-import { getSortedPostData } from "../lib/post";
-import { GetStaticProps } from "next";
-import { PostItem } from "../lib/types";
 import { getNewestPost } from "../lib/getNewestPost";
+import { getSortedPostData } from "../lib/post";
+import { PostItem } from "../lib/types";
 
 export const getStaticProps: GetStaticProps = async () => {
   const postData = getSortedPostData("_experienceHeader");

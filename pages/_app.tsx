@@ -1,10 +1,14 @@
-// import "../styles/tailwind.globals.css";
+import type { AppProps } from "next/app";
+import ThemeContextProvider from "../components/hooks/ThemeContextProvider";
+
 import "../styles/globals.css";
 
-import type { AppProps } from "next/app";
-
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <ThemeContextProvider>
+      <Component {...pageProps} />
+    </ThemeContextProvider>
+  );
 }
 
 export default MyApp;

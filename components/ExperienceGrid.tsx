@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { PostItem } from "../lib/types";
 import { getPhotoUrl } from "../lib/getPhotoUrl";
-import { Dict } from "../lib/types";
+import { PostItem } from "../lib/types";
 
-const gridCard = (post: PostItem): JSX.Element => {
+const GridCard = ({post}: {post:PostItem}): JSX.Element => {
   return (
     <Link href={`/experience/${post.id}`}>
       <a className="experience-grid-card" id={post.id}>
@@ -27,7 +26,7 @@ const ExperienceGrid = ({ posts }: { posts: PostItem[] }): JSX.Element => {
     let index = ii;
     if (ii >= 7) index = ii + 1;
 
-    gridEntries[index] = gridCard(d);
+    gridEntries[index] = <GridCard post={d} key={ii} />
   });
   gridEntries[7] = (
     <div className="experience-card-content">

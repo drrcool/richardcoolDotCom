@@ -1,43 +1,125 @@
-import GlassCard from "../Obsolete/GlassCard";
+import { duotone } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import styled, { useTheme } from "styled-components";
 import { HEADER_CONFIG } from "../config/headerConfig";
 import { Dict, HeaderItem } from "../lib/types";
-import Link from "next/link";
 
+interface StyledNavLinkProps {
+  isActive?: boolean;
+  key?: string;
+}
 // From the label and path generate the JSX we need to create the navLinks
-function navLinks(label: string, path: string): JSX.Element {
+function NavLinks({
+  label,
+  path,
+}: {
+  label: string;
+  path: string;
+}): JSX.Element {
+  const { asPath: currentPath } = useRouter();
+
+  const StyledNavLink = styled.div<StyledNavLinkProps>`
+    font-size: 1.8rem;
+    flex-basis: 100%;
+    font-weight: bold;
+    width: max-content;
+  `;
+  const StyledLinkAnchor = styled.a<StyledNavLinkProps>`
+    color: ${(props) =>
+      props.isActive
+        ? props.theme.colors.activeNavLink
+        : props.theme.colors.navLink};
+    &:hover,
+    &:focus {
+      color: ${(props) => props.theme.colors.hoverNavLink};
+      background-color: transparent;
+      text-decoration: underline;
+    }
+  `;
+
   return (
-    <div className="" key={`${label}-navItem`}>
+    <StyledNavLink key={`${label}-navItem`}>
       <Link href={path}>
-        <a>{label}</a>
+        <StyledLinkAnchor isActive={path === currentPath}>
+          {label}
+        </StyledLinkAnchor>
       </Link>
-    </div>
+    </StyledNavLink>
   );
 }
 // Take the defined HEADER_CONFIG and return an object that
 // includes the JSX element for each.
-function navbarEntries(config: Dict<HeaderItem>): Array<JSX.Element> {
+function NavbarEntries(config: Dict<HeaderItem>): Array<JSX.Element> {
   return Object.keys(config).map((key) => {
     const { label, path } = config[key];
-    return navLinks(label, path);
+    return <NavLinks label={label} path={path} key={label} />;
   });
 }
 
+const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+  --fa-primary-color: ${(props) =>
+    props.theme.colors.headerUtilityButtonPrimary};
+  --fa-secondary-color: ${(props) =>
+    props.theme.colors.headerUtilityButtonSecondary};
+  --fa-primary-opacity: ${(props) => (props.theme.theme === "dark" ? 1 : 0.5)};
+  --fa-secondary-opacity: ${(props) =>
+    props.theme.theme === "light" ? 1 : 0.5};
+  font-size: 2rem;
+`;
 const Header = (): JSX.Element => {
-  const name = "Dr. Richard Cool";
-  const headerCount = Object.keys(HEADER_CONFIG).length;
+  const icon = <StyledFontAwesomeIcon icon={duotone("eclipse")} />;
+  const theme = useTheme();
+  console.log(theme);
+  const HeaderDiv = styled.div`
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: ${(props) => props.theme.colors.bgPrimary};
+  `;
+  const NavBarEntries = styled.div`
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  `;
+  const HeaderUtilityEntries = styled.div`
+    text-align: right;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: flex-end;
+    width: 20%;
+  `;
+  const Button = styled.button`
+    background-color: transparent;
+    border: none;
+    outline: none;
+  `;
+
   return (
-    <div className=" h-[100px] top-0 flex flex-row items-center z-[50] w-inherit bg-black">
-      <div
-        className={
-          "hidden md:grid grid-cols-5 grow md:text-l lg:text-xl xl:text-3xl  pl-10 col-span-3  font-bold"
-        }
-      >
-        {navbarEntries(HEADER_CONFIG)}
-      </div>
-      <div className="basis-full md:basis-1/3  text-xl md:text-xl lg:text-3xl xl:text-5xl pr-10  col-span-5 md:col-span-2 text-center md:text-right text-purple-900 font-extrabold ">
-        {name}
-      </div>
-    </div>
+    <HeaderDiv>
+      <NavBarEntries>{NavbarEntries(HEADER_CONFIG)}</NavBarEntries>
+      <HeaderUtilityEntries>
+        <Button
+          onClick={() =>
+            theme.setTheme(theme.theme === "dark" ? "light" : "dark")
+          }
+        >
+          {icon}
+        </Button>
+      </HeaderUtilityEntries>
+    </HeaderDiv>
   );
 };
 export default Header;
